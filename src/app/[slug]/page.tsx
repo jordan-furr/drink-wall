@@ -1,6 +1,7 @@
 import { sanityFetch } from "@/sanity/lib/live";
 import { POST_QUERY } from "@/sanity/lib/queries";
 import { notFound } from "next/navigation";
+import { Post } from '../components/Post'
 import Link from "next/link";
 
 export default async function Page({
@@ -19,12 +20,10 @@ export default async function Page({
 
   return (
     <main className="postPageContainer">
-      <div className="postContainer">
-        <h1 className="postTitle">{post?.title}</h1>
-        <hr />
+      <div>
+        <Post {...post} />
         <Link href="/">&larr; Return to home</Link>
       </div>
-
     </main>
   );
 }

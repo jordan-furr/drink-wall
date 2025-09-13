@@ -682,41 +682,23 @@ ul {
   list-style: none;
 }
 
+.drinkHero{
+  position: fixed;
+}
+
+
 .homeTitle {
   font-size: 4rem;
   position: fixed;
   top: 40;
-  right: 20px;
+  right: 40;
+  z-index: 100;
 }
 
 .homeTitle:hover {
   transform: scale(101%);
 }
 
-.postTitle {
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 24px;
-  margin-top: -3rem;
-  position: fixed;
-  font-weight: 300;
-}
-
-h3:hover {
-  color: #0a0a0a;
-}
-
-.homeContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  padding: 20px 80px;
-  gap: 64px;
-  margin-top: 160px;
-}
 
 .pageContainer {
   display: flex;
@@ -730,18 +712,35 @@ h3:hover {
 .postPageContainer {
   display: flex;
   justify-content: center;
-  padding-top: 100px;
+  padding-top: 60px;
   gap: 1.5rem;
 }
 
-.postContainer {
+
+.homeContainer {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
+  justify-items: center;
+  gap: 64px;
+  margin-top: 140px;
+  padding-bottom: 20px;
+}
+
+.postsContainer {
   width: 100%;
-  max-width: 330px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 200px;
+  padding-top: 50px;
+  background-color: #fffe90;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.postSize {
+  max-width: 360px;
+  margin-bottom: 3rem;
 }
 
 .prev-img {
@@ -772,4 +771,43 @@ h3:hover {
     width: 100%;
   }
 
+}
+
+
+@media (min-width: 530px) {
+  .postsContainer {
+    margin-top: 250px;
+  }
+}
+
+@media (min-width: 750px) {
+  .postsContainer {
+    margin-top: 300px;
+  }
+}
+
+@media (min-width: 950px) {
+  .postsContainer {
+    margin-top: 360px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .postsContainer {
+    margin-top: 400px;
+    width: fit-content;
+    padding: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .postsContainer {
+    margin-top: 460px;
+  }
+}
+
+@media (min-width: 1350px) {
+  .postsContainer {
+    margin-top: 550px;
+  }
 }
