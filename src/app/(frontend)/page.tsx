@@ -1,30 +1,33 @@
 import Link from "next/link";
-import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/live";
 import { POSTS_QUERY } from "@/sanity/lib/queries";
-
-const options = { next: { revalidate: 60 } };
+import Image from "next/image";
+import { PostCard } from "../components/PostCard";
+import { Title } from "../components/Title";
 
 export default async function Home() {
-  const posts = await client.fetch(POSTS_QUERY, {}, options);
+  const { data: posts } = await sanityFetch({ query: POSTS_QUERY });
 
   return (
     <main className="homeContainer">
-      <h1>drink-wall</h1>
-      <h3>Fresh Finds</h3>
-      <ul className="">
-        {posts.map((post) => (
-          <li key={post._id}>
-            <Link
-              className="under-hov"
-              href={`/posts/${post?.slug?.current}`}
-            >
-              {post?.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <hr />
-      <Link href="/">about &rarr;</Link>
+      <Title>drink-wall</Title>
+      <div className="drinkHero">
+        <Image
+          src={"/drinkwall.png"}
+          alt="Example"
+          width={2750}
+          height={778}
+          style={{ width: "100%", height: "auto" }}
+        />
+      </div>
+      <div className="postsContainer">
+        <div className="margin-a">
+          {posts.map((post) => (
+            <PostCard key={post._id} {...post} />
+          ))}
+        </div>
+      </div>
+      <Link href="/about">about &rarr;</Link>
     </main>
   );
 }

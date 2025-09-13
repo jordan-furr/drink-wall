@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../globals.css";
+import { SanityLive } from '@/sanity/lib/live'
 
 
 export const metadata: Metadata = {
@@ -13,10 +14,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <>
       <body>
         {children}
+        <SanityLive />
       </body>
-    </html>
+    </>
   );
 }
