@@ -683,6 +683,7 @@ ul {
 }
 
 .drinkHero{
+  width: 100%;
   position: fixed;
 }
 
@@ -718,13 +719,14 @@ ul {
 
 
 .homeContainer {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-items: center;
   gap: 64px;
   margin-top: 140px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 .postsContainer {
