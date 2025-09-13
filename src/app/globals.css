@@ -795,8 +795,6 @@ ul {
 @media (min-width: 1050px) {
   .postsContainer {
     margin-top: 400px;
-    width: fit-content;
-    padding: 50px;
   }
 }
 
