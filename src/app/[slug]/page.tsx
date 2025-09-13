@@ -18,9 +18,9 @@ export default async function Page({
   }
 
   return (
-    <main className="pageContainer">
+    <main className="postPageContainer">
       <div className="postContainer">
-        <h1 className="">{post?.title}</h1>
+        <h1 className="postTitle">{post?.title}</h1>
         <hr />
         <Link href="/">&larr; Return to home</Link>
       </div>
