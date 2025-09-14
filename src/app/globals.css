@@ -688,21 +688,27 @@ ul {
   list-style: none;
 }
 
+
+.dwHeader {
+  position: fixed;
+  z-index: 1000;
+  top: 40px;
+  right: 40px;
+}
+
 .drinkHero {
   width: 125%;
   position: fixed;
 }
 
 
-.homeTitle {
+
+.logo {
   font-size: 4rem;
-  position: fixed;
-  top: 40px;
-  right: 40px;
-  z-index: 100;
+  font-weight: 500;
 }
 
-.homeTitle:hover {
+.logo:hover {
   transform: scale(101%);
 }
 
@@ -776,8 +782,10 @@ ul {
 }
 
 @media (max-width: 900px) {
-  .homeTitle {
+  .logo {
     font-size: 3rem;
+  }
+  .dwHeader {
     right: 14px;
   }
 }
@@ -802,9 +810,11 @@ ul {
   .outerPostContainer {
     margin-top: 290px;
   }
-
   .drinkHero {
     width: 100%;
+  }
+  .postSpotlight {
+    width: 85%;
   }
 }
 
@@ -812,9 +822,8 @@ ul {
   .outerPostContainer {
     margin-top: 360px;
   }
-
   .postSpotlight {
-    width: 80%;
+    width: 66%;
   }
 }
 
@@ -822,15 +831,15 @@ ul {
   .outerPostContainer {
     margin-top: 400px;
   }
+  
 }
 
 @media (min-width: 1200px) {
   .outerPostContainer {
     margin-top: 460px;
   }
-
   .postSpotlight {
-    width: 66%;
+    width: 50%;
   }
 }
 
@@ -838,17 +847,21 @@ ul {
   .outerPostContainer {
     margin-top: 500px;
   }
-
-  .postSpotlight {
-    width: 50%;
-  }
 }
 
 @media (min-width: 1450px) {
   .postsContainer {
     grid-template-columns: repeat(3, 1fr);
   }
+
   .postSpotlight {
     width: 40%;
+  }
+}
+
+@media (min-width: 1590px) {
+
+  .postSpotlight {
+    width: 33%;
   }
 }

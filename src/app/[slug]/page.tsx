@@ -20,7 +20,7 @@ export default async function Page({
 
   return (
     <main className="pageContainer">
-      <div className="postSpotlight">
+      <div className="postSpotlight ml5">
         <Post {...post} />
         <Link href="/" className="under-hov">&larr; Return to home</Link>
       </div>

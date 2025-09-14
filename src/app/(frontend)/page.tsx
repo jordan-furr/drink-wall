@@ -10,7 +10,6 @@ export default async function Home() {
 
   return (
     <main className="homeContainer">
-      <Title>drink-wall</Title>
       <div className="drinkHero">
         <Image
           src={"/drinkwall.png"}
