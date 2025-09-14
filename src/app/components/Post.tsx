@@ -11,13 +11,19 @@ export function Post(props: NonNullable<POST_QUERYResult>) {
   const { title, author, mainImage, body, publishedAt, categories } = props;
 
   return (
-    <article className="mb3 postSize">
+    <article className="mb6">
       <div className="mb1">
         {mainImage ? (
           <Image
-            src={urlFor(mainImage).width(360).height(280).url()}
-            width={360}
-            height={280}
+            src={urlFor(mainImage).url()}
+            width={0}
+            height={0}
+            sizes="100%"
+            style={{
+              width: '100%',
+              height: 'auto',
+              objectFit: 'contain'
+            }}
             alt={mainImage.alt || title || ''}
           />
         ) : null}
@@ -26,7 +32,7 @@ export function Post(props: NonNullable<POST_QUERYResult>) {
         <Categories categories={categories} />
       </div>
       <Author author={author} />
-      <div className="flex-row space-between mb3 under-hov">
+      <div className="flex-row space-between mb3">
         <div>{title}</div>
         <PublishedAt publishedAt={publishedAt} />
       </div>

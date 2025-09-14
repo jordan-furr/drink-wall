@@ -13,13 +13,19 @@ export function PostCard(props: POSTS_QUERYResult[0]) {
 
   return (
     <Link href={`/${props.slug!.current}`}>
-      <article className="postSize">
+      <article className="mb3 under-hov">
         <div className="mb1">
           {mainImage ? (
             <Image
-              src={urlFor(mainImage).width(360).height(280).url()}
-              width={360}
-              height={280}
+              src={urlFor(mainImage).url()}
+              width={0}
+              height={0}
+              sizes="100%"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain'
+              }}
               alt={mainImage.alt || title || ''}
             />
           ) : null}
@@ -28,11 +34,11 @@ export function PostCard(props: POSTS_QUERYResult[0]) {
           <Categories categories={categories} />
         </div>
         <Author author={author} />
-        <div className="flex-row space-between mb3 under-hov">
+        <div className="flex-row space-between mb3 ">
           <div>{title}</div>
           <PublishedAt publishedAt={publishedAt} />
         </div>
-        {body? (
+        {body ? (
           <PortableText value={body} components={components} />
         ) : null}
       </article>
