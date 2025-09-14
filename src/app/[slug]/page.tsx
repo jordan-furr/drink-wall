@@ -19,10 +19,10 @@ export default async function Page({
   }
 
   return (
-    <main className="postPageContainer">
-      <div>
+    <main className="pageContainer">
+      <div className="postSpotlight">
         <Post {...post} />
-        <Link href="/">&larr; Return to home</Link>
+        <Link href="/" className="under-hov">&larr; Return to home</Link>
       </div>
     </main>
   );

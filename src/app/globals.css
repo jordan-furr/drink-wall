@@ -678,12 +678,18 @@ h6 {
 
 
 
+
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 ul {
   list-style: none;
 }
 
-.drinkHero{
-  width: 100%;
+.drinkHero {
+  width: 125%;
   position: fixed;
 }
 
@@ -705,18 +711,10 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 30px;
   padding-top: 180px;
+  padding-bottom: 40px;
   gap: 1.5rem;
 }
-
-.postPageContainer {
-  display: flex;
-  justify-content: center;
-  padding-top: 60px;
-  gap: 1.5rem;
-}
-
 
 .homeContainer {
   width: 100%;
@@ -730,9 +728,20 @@ ul {
 }
 
 .postsContainer {
+  width: 92vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  grid-auto-flow: dense;
+  gap: 4vw;
+}
+
+.outerPostContainer {
   width: 100%;
-  margin-top: 200px;
-  padding-top: 50px;
+  margin: auto;
+  margin-top: 180px;
+  padding-top: 4vw;
   background-color: #fffe90;
   z-index: 10;
   display: flex;
@@ -740,9 +749,10 @@ ul {
   justify-content: center;
 }
 
-.postSize {
-  max-width: 360px;
-  margin-bottom: 3rem;
+.postSpotlight {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 120px;
 }
 
 .prev-img {
@@ -757,57 +767,88 @@ ul {
   }
 }
 
-@media (max-width: 1000px) {
 
+
+@media (max-width: 350px) {
+  .postsContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
   .homeTitle {
     font-size: 3rem;
     right: 14px;
   }
-
-  h3 {
-    font-size: 18px;
-    margin-top: -2rem;
-  }
-
-  .postContainer {
-    width: 100%;
-  }
-
 }
 
 
 @media (min-width: 530px) {
-  .postsContainer {
-    margin-top: 250px;
+  .outerPostContainer {
+    margin-top: 230px;
   }
+
+  .drinkHero {
+    width: 115%;
+  }
+
+  .postsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
 }
 
 @media (min-width: 750px) {
-  .postsContainer {
-    margin-top: 300px;
+  .outerPostContainer {
+    margin-top: 290px;
+  }
+
+  .drinkHero {
+    width: 100%;
   }
 }
 
-@media (min-width: 950px) {
-  .postsContainer {
+@media (min-width: 930px) {
+  .outerPostContainer {
     margin-top: 360px;
+  }
+
+  .postSpotlight {
+    width: 80%;
   }
 }
 
 @media (min-width: 1050px) {
-  .postsContainer {
+  .outerPostContainer {
     margin-top: 400px;
   }
 }
 
 @media (min-width: 1200px) {
-  .postsContainer {
+  .outerPostContainer {
     margin-top: 460px;
+  }
+
+  .postSpotlight {
+    width: 66%;
   }
 }
 
 @media (min-width: 1350px) {
+  .outerPostContainer {
+    margin-top: 500px;
+  }
+
+  .postSpotlight {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1450px) {
   .postsContainer {
-    margin-top: 550px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .postSpotlight {
+    width: 40%;
   }
 }

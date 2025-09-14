@@ -20,10 +20,12 @@ export default async function Home() {
           style={{ width: "100%", height: "auto" }}
         />
       </div>
-      <div className="postsContainer">
-        <div className="margin-a">
-          {posts.map((post) => (
-            <PostCard key={post._id} {...post} />
+      <div className="outerPostContainer">
+        <div className="postsContainer">
+          {posts.map((post, i) => (
+            <div key={i} className="cell">
+               <PostCard key={post._id} {...post} />
+            </div>
           ))}
         </div>
       </div>
