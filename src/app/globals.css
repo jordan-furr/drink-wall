@@ -735,11 +735,22 @@ ul {
 .postsContainer {
   width: 92vw;
   margin: auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: auto;
-  grid-auto-flow: dense;
+  column-count: 1;
   gap: 4vw;
+}
+
+.postsContainer > * {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+  page-break-inside: avoid;  
+  -webkit-column-break-inside: avoid; 
+  -moz-column-break-inside: avoid; 
+  display: inline-block;
+  width: 100%;
+}
+
+.postCard {
+  padding-bottom: 3rem;
 }
 
 .outerPostContainer {
@@ -776,7 +787,7 @@ ul {
 
 @media (max-width: 350px) {
   .postsContainer {
-    grid-template-columns: 1fr;
+    column-count: 1;
   }
 }
 
@@ -801,7 +812,7 @@ ul {
   }
 
   .postsContainer {
-    grid-template-columns: repeat(2, 1fr);
+    column-count: 2;
   }
 
 }
@@ -818,6 +829,7 @@ ul {
   .postSpotlight {
     width: 85%;
   }
+
 }
 
 @media (min-width: 930px) {
@@ -845,14 +857,12 @@ ul {
   .postSpotlight {
     width: 50%;
   }
-}
-
-@media (min-width: 1280px) {
 
   .postsContainer {
-    grid-template-columns: repeat(3, 1fr);
+    column-count: 3;
   }
 }
+
 
 @media (min-width: 1350px) {
   .outerPostContainer {

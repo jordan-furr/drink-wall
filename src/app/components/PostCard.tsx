@@ -13,7 +13,7 @@ export function PostCard(props: POSTS_QUERYResult[0]) {
 
   return (
     <Link href={`/${props.slug!.current}`}>
-      <article className="mb3 under-hov">
+      <article className="postCard under-hov">
         <div className="mb1">
           {mainImage ? (
             <Image
