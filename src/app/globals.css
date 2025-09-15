@@ -776,6 +776,20 @@ ul {
 }
 
 
+.authorCont {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+
+
+
+
+
+
+
 
 @media (prefers-color-scheme: dark) {
   html {

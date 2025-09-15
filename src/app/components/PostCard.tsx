@@ -33,7 +33,7 @@ export function PostCard(props: POSTS_QUERYResult[0]) {
         <div className="">
           <Categories categories={categories} />
         </div>
-        <Author author={author} />
+        
         <div className="flex-row space-between mb3 ">
           <div>{title}</div>
           <PublishedAt publishedAt={publishedAt} />
