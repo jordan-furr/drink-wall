@@ -5,8 +5,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #fffe90;
+    --foreground: #171717;
   }
 }
 
@@ -784,6 +784,7 @@ ul {
   .logo {
     font-size: 3rem;
   }
+
   .dwHeader {
     right: 14px;
   }
@@ -809,9 +810,11 @@ ul {
   .outerPostContainer {
     margin-top: 290px;
   }
+
   .drinkHero {
     width: 100%;
   }
+
   .postSpotlight {
     width: 85%;
   }
@@ -821,6 +824,7 @@ ul {
   .outerPostContainer {
     margin-top: 360px;
   }
+
   .postSpotlight {
     width: 66%;
   }
@@ -830,13 +834,14 @@ ul {
   .outerPostContainer {
     margin-top: 400px;
   }
-  
+
 }
 
 @media (min-width: 1200px) {
   .outerPostContainer {
     margin-top: 460px;
   }
+
   .postSpotlight {
     width: 50%;
   }
