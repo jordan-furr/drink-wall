@@ -21,10 +21,8 @@ export default async function Home() {
       </div>
       <div className="outerPostContainer">
         <div className="postsContainer">
-          {posts.map((post, i) => (
-            <div key={i} className="cell">
-               <PostCard key={post._id} {...post} />
-            </div>
+          {posts.map((post) => (
+            <PostCard key={post._id} {...post} />
           ))}
         </div>
       </div>
