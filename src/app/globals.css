@@ -847,6 +847,13 @@ ul {
   }
 }
 
+@media (min-width: 1280px) {
+
+  .postsContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (min-width: 1350px) {
   .outerPostContainer {
     margin-top: 500px;
@@ -854,10 +861,7 @@ ul {
 }
 
 @media (min-width: 1450px) {
-  .postsContainer {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
+  
   .postSpotlight {
     width: 40%;
   }
