@@ -31,14 +31,18 @@ export function Post(props: NonNullable<POST_QUERYResult>) {
       <div className="">
         <Categories categories={categories} />
       </div>
-      <Author author={author} />
       <div className="flex-row space-between mb3">
         <div>{title}</div>
         <PublishedAt publishedAt={publishedAt} />
       </div>
-      {body ? (
-        <PortableText value={body} components={components} />
-      ) : null}
+      <div className="mb3">
+        {body ? (
+          <PortableText value={body} components={components} />
+        ) : null}
+      </div>
+      {author ? (
+        <Author author={author} />
+      ) : "Uploaded by: Anon"}
     </article>
   );
 }
