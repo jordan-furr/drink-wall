@@ -8,7 +8,7 @@ import { components } from '@/sanity/portableTextComponents'
 import { PortableText } from 'next-sanity'
 
 export function PostCard(props: POSTS_QUERYResult[0]) {
-  const { title, body, author, mainImage, publishedAt, categories } = props
+  const { title, body, mainImage, publishedAt, categories } = props
 
   return (
     <Link href={`/${props.slug!.current}`}>
