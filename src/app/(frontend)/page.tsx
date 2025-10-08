@@ -1,11 +1,22 @@
 import Link from "next/link";
-import { sanityFetch } from "@/sanity/lib/live";
-import { POSTS_QUERY } from "@/sanity/lib/queries";
 import Image from "next/image";
 import { PostCard } from "../components/PostCard";
+import { getPosts, getTotalPosts } from "@/sanity/lib/queries";
 
-export default async function Home() {
-  const { data: posts } = await sanityFetch({ query: POSTS_QUERY });
+export default async function Home({
+  searchParams
+}: {
+  searchParams: { page?: string }
+}) {
+  const limit = 12;
+  const pageNum = Number(searchParams?.page) || 1;
+
+  const start = (pageNum - 1) * limit;
+  const end = (limit * pageNum);
+
+  const posts = await getPosts(start, end);
+  const totalPosts = await getTotalPosts();
+  const totalPages = Math.ceil(totalPosts / limit);
 
   return (
     <main className="homeContainer">
@@ -24,8 +35,40 @@ export default async function Home() {
             <PostCard key={post._id} {...post} />
           ))}
         </div>
+        <nav>
+          <div className="flex-row space-between pageNav">
+            <div>
+              {pageNum !== 1 && (
+                <Link
+                  href={pageNum === 2 ? '/' : {
+                    pathname: '/',
+                    query: { page: pageNum - 1 }
+                  }}
+                  className="pageNavItem"
+                >
+                 &larr; Prev 
+                </Link>
+              )}
+            </div>
+            <div>
+              {posts.length === limit && pageNum < totalPages && (
+                <Link
+                  href={{
+                    pathname: '/',
+                    query: { page: pageNum + 1 }
+                  }}
+                  className="pageNavItem"
+                >
+                  Next &rarr;
+                </Link>
+              )}
+            </div>
+          </div>
+          <div className="text-center flex-col">
+            <Link href="/about" className="pageNavItem">About</Link>
+          </div>
+        </nav>
       </div>
-      <Link href="/about">about &rarr;</Link>
     </main>
   );
 }
