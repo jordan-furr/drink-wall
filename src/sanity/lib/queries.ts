@@ -5,7 +5,7 @@ import { sanityFetch } from '@/sanity/lib/live';
 export const PAGINATED_POSTS_QUERY = 
 defineQuery(`*[_type == "post" && defined(slug.current)] | order(publishedAt desc)[$start...$end]{
 
-  id,
+  _id,
   title,
   slug,
   body,
