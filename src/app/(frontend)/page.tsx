@@ -6,10 +6,11 @@ import { getPosts, getTotalPosts } from "@/sanity/lib/queries";
 export default async function Home({
   searchParams
 }: {
-  searchParams: { page?: string }
+  searchParams: Promise<{ page?: string }>
 }) {
   const limit = 12;
-  const pageNum = Number(searchParams?.page) || 1;
+  const params = await searchParams;
+  const pageNum = Number(params?.page) || 1;
 
   const start = (pageNum - 1) * limit;
   const end = (limit * pageNum);
