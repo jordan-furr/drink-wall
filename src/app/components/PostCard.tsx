@@ -6,7 +6,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { components } from '@/sanity/portableTextComponents'
 import { PortableText } from 'next-sanity'
-import { Author } from './Author'
 
 export function PostCard(props: POSTS_QUERYResult[0]) {
   const { title, body, author, mainImage, publishedAt, categories } = props
@@ -20,6 +19,7 @@ export function PostCard(props: POSTS_QUERYResult[0]) {
               src={urlFor(mainImage).url()}
               width={0}
               height={0}
+              quality={85}
               sizes="100%"
               style={{
                 width: '100%',
